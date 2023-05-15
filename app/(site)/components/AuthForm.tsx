@@ -1,7 +1,7 @@
 
 'use client';
 
-
+import axios from 'axios'
 import { useCallback, useState } from "react";
 import { SubmitHandler, FieldValues, useForm } from "react-hook-form";
 import { BsGithub, BsGoogle, BsLinkedin } from 'react-icons/bs'
@@ -43,7 +43,8 @@ const AuthForm = () => {
     setIsLoading(true);
     
     if(variant === 'REGISTER'){
-      //Next Register
+      //Axios
+      axios.post('/api/register', data)
 
     }
 
@@ -67,7 +68,6 @@ const AuthForm = () => {
           )}
           <Input id="email" label="Email Address" type="Email" register={register} errors={errors} disabled={isLoading} />
           <Input id="password" label="Password" type="password" register={register} errors={errors} disabled={isLoading} />
-
           <div>
             <Button disabled={isLoading} fullWidth type="submit"> {variant === 'LOGIN' ? 'Sign in' : 'Register'} </Button>
           </div>

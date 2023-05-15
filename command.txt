@@ -8,3 +8,10 @@
 //Axios package install
 npm install Axios
 
+
+
+// Toast message 
+
+npm install react-hot-toast
+
+
